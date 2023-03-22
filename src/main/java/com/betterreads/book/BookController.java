@@ -26,17 +26,17 @@ public class BookController {
 
     @GetMapping(path = "/get/{id}")
     public Optional<Book> getById(@PathVariable Long id){
-        return null;
+        return bookService.getBookById(id);
     }
 
     @GetMapping(path = "/get/{title}")
     public Optional<List<Book>> getByTitle(@PathVariable String title){
-        return null;
+        return bookService.getBookByTitle(title);
     }
 
     @GetMapping(path = "/getAll")
     public List<Book> getAll(){
-        return null;
+        return bookService.getAll();
     }
 
     @PutMapping(path = "/update/{id}")

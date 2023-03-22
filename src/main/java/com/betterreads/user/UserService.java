@@ -16,4 +16,12 @@ public class UserService {
     public void createUser(User user){
         userRepository.save(user);
     }
+
+    public User getUserById(Long id){
+        return userRepository.getUserById(id);
+    }
+
+    public User getUserByUsername(String username){
+        return userRepository.getUserByUsername(username);
+    }
 }

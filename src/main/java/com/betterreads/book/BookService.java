@@ -19,4 +19,18 @@ public class BookService {
     public void createBook(Book newBook){
         bookRepository.save(newBook);
     }
+
+    public Optional<List<Book>> getBookByTitle(String title){
+        return bookRepository.getBookByTitle(title);
+    }
+
+    public Optional<Book> getBookById(Long id){
+        return bookRepository.getBookById(id);
+    }
+
+    public List<Book> getAll(){
+        return bookRepository.findAll();
+    }
+
+
 }

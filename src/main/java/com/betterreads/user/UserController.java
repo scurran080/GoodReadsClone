@@ -16,12 +16,17 @@ public class UserController {
     }
 
     @PostMapping(path = "/create")
-    public User createUser(User user){
-        return null;
+    public void createUser(User user){
+        this.userService.createUser(user);
     }
 
     @GetMapping(path = "/get/{id}")
     public User getById(@PathVariable Long id){
-        return null;
+        return userService.getUserById(id);
+    }
+
+    @GetMapping(path = "/get/user/{username}")
+    public User getUserByUsername(@PathVariable String username){
+        return userService.getUserByUsername(username);
     }
 }
