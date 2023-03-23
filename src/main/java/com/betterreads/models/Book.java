@@ -1,15 +1,22 @@
-package com.betterreads.book;
+package com.betterreads.models;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 
+@Entity
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String author;
+    @ManyToOne
+    @JoinColumn(name="author_id")
+    private Author author;
     private String publisher;
     private String isbn;
+
     private String description;
-    private ArrayList<String> tags;
+    private ArrayList<BookGenre> tags;
     private Float rating;
 
     public Long getId() {
@@ -28,11 +35,11 @@ public class Book {
         this.name = name;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -60,15 +67,15 @@ public class Book {
         this.description = description;
     }
 
-    public ArrayList<String> getTags() {
+    public ArrayList<BookGenre> getTags() {
         return tags;
     }
 
-    public void setTags(ArrayList<String> tags) {
+    public void setTags(ArrayList<BookGenre> tags) {
         this.tags = tags;
     }
 
-    public void addTag(String newTag){
+    public void addTag(BookGenre newTag){
         this.tags.add(newTag);
     }
 

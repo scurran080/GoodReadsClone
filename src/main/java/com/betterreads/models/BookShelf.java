@@ -1,9 +1,20 @@
-package com.betterreads.bookshelf;
+package com.betterreads.models;
+
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.util.List;
 
+@Entity
 public class BookShelf {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Nonnull
     private Long userId;
     private String name;
     private List<Long> books;

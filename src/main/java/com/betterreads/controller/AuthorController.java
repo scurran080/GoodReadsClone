@@ -1,11 +1,11 @@
-package com.betterreads.author;
+package com.betterreads.controller;
 
 
+import com.betterreads.service.AuthorService;
+import com.betterreads.models.Author;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api/author", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -21,5 +21,12 @@ public class AuthorController {
     public void createAuthor(Author author){
         this.authorService.createAuthor(author);
     }
+
+    @GetMapping(path = "/getById/{id}")
+    public Author getById(@PathVariable("id") Long id){
+        Author author = this.authorService.getById(id);
+        return author;
+    }
+
 
 }

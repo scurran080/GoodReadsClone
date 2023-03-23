@@ -1,8 +1,9 @@
-package com.betterreads.book;
+package com.betterreads.service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.ArrayList;
 
+import com.betterreads.models.Book;
+import com.betterreads.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,16 +21,16 @@ public class BookService {
         bookRepository.save(newBook);
     }
 
-    public Optional<List<Book>> getBookByTitle(String title){
+    public ArrayList<Book> getBookByTitle(String title){
         return bookRepository.getBookByTitle(title);
     }
 
-    public Optional<Book> getBookById(Long id){
+    public Book getBookById(Long id){
         return bookRepository.getBookById(id);
     }
 
-    public List<Book> getAll(){
-        return bookRepository.findAll();
+    public ArrayList<Book> getAllBooks(){
+        return bookRepository.getAllBooks();
     }
 
 

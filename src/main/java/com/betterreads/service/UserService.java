@@ -1,5 +1,7 @@
-package com.betterreads.user;
+package com.betterreads.service;
 
+import com.betterreads.models.User;
+import com.betterreads.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

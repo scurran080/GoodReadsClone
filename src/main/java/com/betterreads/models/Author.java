@@ -1,12 +1,19 @@
-package com.betterreads.author;
+package com.betterreads.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="Author")
 public class Author {
-
+    @Id
+    @Column(name="id", nullable = false, unique = true)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstName;
     private String lastName;
     private String countryOrigin;
     private String biography;
+    @Column(name="dob", length = 10, nullable = true, unique = false)
     private String dob;
 
     public Long getId() {

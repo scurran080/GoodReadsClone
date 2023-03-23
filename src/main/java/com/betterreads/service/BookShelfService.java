@@ -1,5 +1,7 @@
-package com.betterreads.bookshelf;
+package com.betterreads.service;
 
+import com.betterreads.models.BookShelf;
+import com.betterreads.repository.BookShelfRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
